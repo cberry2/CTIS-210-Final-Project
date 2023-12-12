@@ -1,2 +1,2 @@
 # CTIS-210-Final-Project
-The goal of this project is to produce a multiple choice quiz about Chemistry, specifically the Periodic Table. Questions ask about atomic number, element names, and the names of common compounds. 
+The goal of this project is to produce a quiz about Chemistry, specifically the Periodic Table. Questions ask about atomic number, element names, and properties of various elements. When prompted for a numerical answer, type in an integer value. When prompted for an answer containing letters, please capitalize the first letter and ensure all spelling and spaces are correct. Enjoy!
