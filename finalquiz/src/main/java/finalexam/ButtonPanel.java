@@ -44,7 +44,6 @@ public class ButtonPanel extends JPanel {
     //Creating the window
     public ButtonPanel () {
         initPanel();
-        add(score);
     }
 
     private void initPanel() {
@@ -103,6 +102,7 @@ public class ButtonPanel extends JPanel {
         add(Answer7);
         add(Question8);
         add(Answer8);
+        add(score);
 
     }
 
