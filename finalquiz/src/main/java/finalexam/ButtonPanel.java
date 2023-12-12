@@ -39,6 +39,7 @@ public class ButtonPanel extends JPanel {
     private String response8;
     private double Points;
     private JLabel score;
+    private String result;
 
 
     //Creating the window
@@ -80,11 +81,12 @@ public class ButtonPanel extends JPanel {
         Answer6.addActionListener(new AnswerListener6());
         Answer7.addActionListener(new AnswerListener7());
         Answer8.addActionListener(new AnswerListener8());
-
-        //Writing the score
+        
+        
         String result = Double.toString(Points);
         score = new JLabel("Your score is: " + result);
-
+        
+        
         //Adding everything to the panel
         add(Question1);
         add(Answer1);
@@ -103,7 +105,7 @@ public class ButtonPanel extends JPanel {
         add(Question8);
         add(Answer8);
         add(score);
-
+        
     }
 
     //Making the action listeners
@@ -189,16 +191,16 @@ public class ButtonPanel extends JPanel {
 
     //If-else statements to calculate points
     public double calculatePoints() {
-        double points;
+        double Points = 0;
 
 
         //Question 1
         if (response1.equals("6")) {
-            points = Points + 1;
+            Points = Points + 1;
         } if (response2.equals("35")) {
-            points = Points + 1;
+            Points = Points + 1;
         } else {
-            points = Points + 0;
+            Points = Points + 0;
         }
 
         //Question 3
@@ -243,8 +245,7 @@ public class ButtonPanel extends JPanel {
             Points = Points + 0;
         }
 
-        return points;
-
+        return Points;
     }
 
 }
