@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
+//author: cassie berry
+
 public class Main {
     public static void main(String[] args) {
         JFrame myFrame = new JFrame("Chemistry Quiz");
