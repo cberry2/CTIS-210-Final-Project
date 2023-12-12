@@ -2,19 +2,12 @@ package finalexam;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Event;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.Action;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
 
 
 public class ButtonPanel extends JPanel {
@@ -90,7 +83,8 @@ public class ButtonPanel extends JPanel {
         Answer8.addActionListener(new AnswerListener8());
 
         //Writing the score
-        score = new JLabel("Your score is: " + Points);
+        String result = Double.toString(Points);
+        score = new JLabel("Your score is: " + result);
 
         //Adding everything to the panel
         add(Question1);
@@ -117,14 +111,8 @@ public class ButtonPanel extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            response1 = (Answer1.getText());
+            response1 = Answer1.getText();
 
-
-            if (response1.equals("6")) {
-            Points = Points + 1;
-        } else {
-            Points = Points + 0;
-        }
             calculatePoints();
         }
     }
@@ -201,20 +189,16 @@ public class ButtonPanel extends JPanel {
 
     //If-else statements to calculate points
     public double calculatePoints() {
-        
+        double points;
+
 
         //Question 1
         if (response1.equals("6")) {
-            Points = Points + 1;
+            points = Points + 1;
+        } if (response2.equals("35")) {
+            points = Points + 1;
         } else {
-            Points = Points + 0;
-        }
-
-        //Question 2
-        if (response2.equals("35")) {
-            Points = Points + 1;
-        } else {
-            Points = Points + 0;
+            points = Points + 0;
         }
 
         //Question 3
@@ -259,7 +243,7 @@ public class ButtonPanel extends JPanel {
             Points = Points + 0;
         }
 
-        return Points;
+        return points;
 
     }
 
