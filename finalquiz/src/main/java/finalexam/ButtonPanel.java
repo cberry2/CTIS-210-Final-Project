@@ -75,14 +75,14 @@ public class ButtonPanel extends JPanel {
         Answer8 = new JTextField(4);
 
         //Adding the action listeners to the textfields
-        Answer1.addActionListener(new AnswerListener1());
-        Answer2.addActionListener(new AnswerListener2());
-        Answer3.addActionListener(new AnswerListener3());
-        Answer4.addActionListener(new AnswerListener4());
-        Answer5.addActionListener(new AnswerListener5());
-        Answer6.addActionListener(new AnswerListener6());
-        Answer7.addActionListener(new AnswerListener7());
-        Answer8.addActionListener(new AnswerListener8());
+        Answer1.addActionListener(new AnswerListener());
+        Answer2.addActionListener(new AnswerListener());
+        Answer3.addActionListener(new AnswerListener());
+        Answer4.addActionListener(new AnswerListener());
+        Answer5.addActionListener(new AnswerListener());
+        Answer6.addActionListener(new AnswerListener());
+        Answer7.addActionListener(new AnswerListener());
+        Answer8.addActionListener(new AnswerListener());
         
         
         String result = Double.toString(Points);
@@ -111,143 +111,73 @@ public class ButtonPanel extends JPanel {
     }
 
     //Making the action listeners
-    private class AnswerListener1 implements ActionListener {
+    private class AnswerListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             response1 = Answer1.getText();
 
-            calculatePoints();
-        }
-    }
-    
-    private class AnswerListener2 implements ActionListener {
+            response2 = Answer2.getText();
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response2 = (Answer2.getText());
-
-            calculatePoints();
-        }
-    }
-    
-    private class AnswerListener3 implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response3 = (Answer3.getText());
-
-            calculatePoints();
-        }
-    }
-    
-    private class AnswerListener4 implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response4 = (Answer4.getText());
-
-            calculatePoints();
-        }
-    }
-    
-    private class AnswerListener5 implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response5 = (Answer5.getText());
+            response3 = Answer3.getText();
             
-            calculatePoints();
-        }
-    }
-    
-    private class AnswerListener6 implements ActionListener {
+            response4 = Answer4.getText();
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response6 = (Answer6.getText());
-            
-            calculatePoints();
-        }
-    }
-    
-    private class AnswerListener7 implements ActionListener {
+            response5 = Answer5.getText();
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response7 = (Answer7.getText());
+            response6 = Answer6.getText();
+
+            response7 = Answer7.getText();
+
+            response8 = Answer8.getText();
 
             calculatePoints();
         }
-    }
 
-    private class AnswerListener8 implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            response8 = (Answer8.getText());
-            
-            calculatePoints();
-        }
     }
 
     //If-else statements to calculate points
-    public double calculatePoints() {
+    public void calculatePoints() {
         double Points = 0;
 
 
         //Question 1
         if (response1.equals("6")) {
             Points = Points + 1;
-        } if (response2.equals("35")) {
+        } 
+        if (response2.equals("35")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
-
         //Question 3
         if (response3.equals("6")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
 
         //Question 4
         if (response4.equals("10")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
 
         //Question 5
         if (response5.equals("1s22s2p63s2p6d104s2p6d105s")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
 
         //Question 6
         if (response6.equals("[Ar]4s23d104p4")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
-
         //Question 7
         if (response7.equals("Chlorine")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
 
         //Question 8
         if (response8.equals("53")) {
             Points = Points + 1;
-        } else {
-            Points = Points + 0;
         }
 
-        return Points;
+        score.setText("Your score: " + Double.toString(Points));
     }
 
 }
